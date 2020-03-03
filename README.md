@@ -72,16 +72,16 @@ Die korrekte Implementierung der Logik ist mittels Unittests zu prüfen. Es ist 
 Einige Unittests sind bereits implementiert:
 
 ```csharp
-public void T01_GetCoinDepot_CoinTypesCount_ShouldReturn6Types_3perType_SumIs1155Cents()
-public void T02_GetProducts_9Products_FromCappuccinoToRistretto()
-public void T03_BuyOneCoffee_OneCoinIsEnough_CheckCoinsAndOrders()
+public void T01_GetCoinDepot_CoinTypesCount_ShouldReturn6Types_3perType_SumIs1155Cents();
+public void T02_GetProducts_9Products_FromCappuccinoToRistretto();
+public void T03_BuyOneCoffee_OneCoinIsEnough_CheckCoinsAndOrders();
 ```
 
 Die restlichen Unittests sind von Ihnen zu implementieren:
 
 ```csharp
-public void T04_BuyOneCoffee_ExactThrowInOneCoin_CheckCoinsAndOrders()
-public void T05_BuyOneCoffee_MoreCoins_CheckCoinsAndOrders()
-public void T06_BuyMoreCoffees_OneCoins_CheckCoinsAndOrders()
-public void T07_BuyMoreCoffees_UntilDonation_CheckCoinsAndOrders()
+public void T04_BuyOneCoffee_ExactThrowInOneCoin_CheckCoinsAndOrders();
+public void T05_BuyOneCoffee_MoreCoins_CheckCoinsAndOrders();
+public void T06_BuyMoreCoffees_OneCoins_CheckCoinsAndOrders();
+public void T07_BuyMoreCoffees_UntilDonation_CheckCoinsAndOrders();
 ```
