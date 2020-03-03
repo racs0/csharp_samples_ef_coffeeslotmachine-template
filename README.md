@@ -10,7 +10,7 @@ Für den allseits beliebten Kaffeeautomaten ist ein Persistencelayer zu implemen
 
 Die Geschäftslogik und die Entities werden im Corelayer verwaltet. Die Anforderungen des Corelayers an den DAL werden wieder über entsprechende Contracts definiert.
 
-![Klassendiagramm](.\images\00_classdiagram.png)
+![Klassendiagramm](./images/00_classdiagram.png)
 
 Die im Automaten vorhandenen Münzen (5, 10, 20, 50, 100, 200 Cent) werden in der Datenbank (Coin) gespeichert. Am Beginn des Programms sind von jedem Münztyp 3 Münzen vorhanden (Implementierung über SeedDatabase-Migration). Der Einwurf und die Rückgabe verändern natürlich das Münzdepot!
 
@@ -26,7 +26,7 @@ Die richtige Implementierung wird über Unittests geprüft, die teilweise noch z
 Der `OrderController` implementiert den Ablauf einer Bestellung in Zusammenarbeit mit dem
 Persistencelayer:
 
-![Prozess](.\images\01_process.png)
+![Prozess](./images/01_process.png)
 
 Die Bestellung beginnt mit der Auswahl eines Kaffeetyps (`OrderController.OrderCoffee(..);` siehe
 Tabelle `Products`). Daraufhin erfolgt der Einwurf der Münzen, bis der Preis des Produkts zumindest
