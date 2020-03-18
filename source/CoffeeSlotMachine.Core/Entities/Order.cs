@@ -29,12 +29,12 @@ namespace CoffeeSlotMachine.Core.Entities
         /// <summary>
         /// Summe der eingeworfenen Cents.
         /// </summary>
-        public int ThrownInCents => -1;
+        public int ThrownInCents;
 
         /// <summary>
         /// Summe der Cents die zurückgegeben werden
         /// </summary>
-        public int ReturnCents => -1;
+        public int ReturnCents;
 
 
         public int ProductId { get; set; }
@@ -46,7 +46,7 @@ namespace CoffeeSlotMachine.Core.Entities
         /// Kann der Automat mangels Kleingeld nicht
         /// mehr herausgeben, wird der Rest als Spende verbucht
         /// </summary>
-        public int DonationCents => -1;
+        public int DonationCents;
 
         /// <summary>
         /// Münze wird eingenommen.
@@ -55,7 +55,20 @@ namespace CoffeeSlotMachine.Core.Entities
         /// <returns>isFinished ist true, wenn der Produktpreis zumindest erreicht wurde</returns>
         public bool InsertCoin(int coinValue)
         {
-            throw new NotImplementedException();
+            ThrownInCents += coinValue;
+
+            if(ThrownInCents == 100)
+            {
+                ReturnCents = ThrownInCents - Product.PriceInCents;
+
+                DonationCents = 0;
+
+
+
+                return true;
+            }
+
+            return false;
         }
 
         /// <summary>
@@ -66,7 +79,17 @@ namespace CoffeeSlotMachine.Core.Entities
         /// <param name="coins">Aktueller Zustand des Münzdepots</param>
         public void FinishPayment(IEnumerable<Coin> coins)
         {
-            throw new NotImplementedException();
+             
+        }
+
+        public Order()
+        {
+
+        }
+
+        public Order(Product product)
+        {
+            Product = product;
         }
     }
 }

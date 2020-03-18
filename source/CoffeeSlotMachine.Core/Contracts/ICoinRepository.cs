@@ -5,5 +5,9 @@ namespace CoffeeSlotMachine.Core.Contracts
 {
     public interface ICoinRepository
     {
+        IEnumerable<Coin> GetAllCoinsSorted();
+        void AddToDepot(int coinValue);
+
+
     }
 }

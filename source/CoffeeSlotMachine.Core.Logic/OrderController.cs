@@ -32,7 +32,7 @@ namespace CoffeeSlotMachine.Core.Logic
         /// <returns></returns>
         public IEnumerable<Product> GetProducts()
         {
-            throw new NotImplementedException();
+            return _productRepository.GetAllProducts();
         }
 
         /// <summary>
@@ -41,7 +41,14 @@ namespace CoffeeSlotMachine.Core.Logic
         /// <param name="product"></param>
         public Order OrderCoffee(Product product)
         {
-            throw new NotImplementedException();
+            if(_productRepository.FindProduct(product) == true)
+            {
+                Order newOrder = new Order(product);
+                _orderRepository.AddOrder(newOrder);
+                return newOrder;
+            }
+
+            return null;
         }
 
         /// <summary>
@@ -52,7 +59,11 @@ namespace CoffeeSlotMachine.Core.Logic
         /// <returns>true, wenn die Bestellung abgeschlossen ist</returns>
         public bool InsertCoin(Order order, int coinValue)
         {
-            throw new NotImplementedException();
+            if (order.InsertCoin(coinValue))
+            {
+                return true;
+            }
+            return false;
         }
 
         /// <summary>
@@ -61,7 +72,7 @@ namespace CoffeeSlotMachine.Core.Logic
         /// <returns></returns>
         public IEnumerable<Coin> GetCoinDepot()
         {
-            throw new NotImplementedException();
+            return _coinRepository.GetAllCoinsSorted();
         }
 
 
